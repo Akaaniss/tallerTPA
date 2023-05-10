@@ -52,8 +52,8 @@ class Ventana_principal(QMainWindow):
             self.layout_valores.addWidget(edit_valor, i, 1)
         
         self.grupo_atributos.setLayout(self.layout_atributos)
-        self.layout_derecha.addLayout(self.layout_atributos)
-        self.layout_derecha.addLayout(self.layout_valores)
+        self.layout_derecha.addLayout(self.layout_atributos, 0, 0, 1, 2)
+        self.layout_derecha.addLayout(self.layout_valores, 1, 0, 1, 2)
 
         self.layout_principal.addLayout(self.layout_izquierda)
         self.layout_principal.addWidget(self.scroll_area)
@@ -82,7 +82,6 @@ class Ventana_principal(QMainWindow):
         print(f"Atributos:")
         for atributo, valor in zip(atributos, valores):
             print(f"{atributo}: {valor}")
-
 
 if __name__ == '__main__':
     app = QApplication([])
